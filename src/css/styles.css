@@ -1,0 +1,104 @@
+/* Colors */
+/* Responsive */
+/* maxwidth */
+@import url(@angular/material/prebuilt-themes/deeppurple-amber.css);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* Media Querys */
+.contenedor {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20px auto 20px;
+  grid-auto-rows: auto;
+  margin: 0 auto;
+  color: white;
+}
+
+@media only screen and (max-width: 575.98px) {
+  .contenedor {
+    background-color: blue;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .contenedor {
+    background-color: red;
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
+  .contenedor {
+    background-color: gray;
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contenedor {
+    background-color: green;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor {
+    background-color: orange;
+    max-width: 1140px;
+  }
+}
+
+.contenido {
+  display: grid;
+  grid-column: 2;
+  padding: 20px 0px;
+}
+
+.contenido h1 {
+  align-self: center;
+  justify-self: center;
+}
+
+.contenido p {
+  align-self: center;
+  justify-self: center;
+}
+
+.dosColumnas {
+  display: grid;
+  grid-column: 2;
+  padding: 20px 0px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dosColumnas .columnaUno {
+  grid-column: auto;
+}
+
+.tresColumnas {
+  display: grid;
+  grid-column: 2;
+  padding: 20px 0px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tresColumnas .columnaUno {
+  grid-column: auto;
+}
+
+.seccionFluida {
+  width: 100%;
+  background-color: greenyellow;
+}
+
+footer .contenido {
+  align-self: center;
+  justify-self: center;
+  grid-column: 2;
+}

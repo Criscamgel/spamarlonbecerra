@@ -1,0 +1,93 @@
+@import "variables";
+@import "mixins";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s;
+  }
+
+ /* Media Querys */
+
+ .contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20px auto 20px;
+    grid-auto-rows: auto;
+    margin: 0 auto;
+    color: white;    
+  
+ @include Asmall() {
+    background-color: blue;
+  }
+  
+  @include smallTablet() {
+    background-color: red;
+    max-width: $mWtablet;
+  }
+  
+  @include tabletLaptop() {
+    background-color: gray;
+    max-width: $mWlaptop;
+  }
+  
+  @include laptopDesktop() {
+    background-color: green;
+    max-width: $mWdesktop;
+  }
+  
+  @include desktopFull() {
+    background-color: orange;
+    max-width: $mWfull;
+  }
+}
+
+.contenido{
+    display: grid;
+    grid-column: 2;
+    padding: 20px 0px;
+    h1 {
+      align-self: center;
+      justify-self: center;
+    }
+    p {
+      align-self: center;
+      justify-self: center;
+    }
+      
+  }
+
+.dosColumnas{
+    display: grid;
+    grid-column: 2;
+    padding: 20px 0px;
+    grid-template-columns: repeat(2, 1fr);       
+    .columnaUno{
+        grid-column: auto;
+    }
+      
+  }
+
+  .tresColumnas{
+    display: grid;
+    grid-column: 2;
+    padding: 20px 0px;
+    grid-template-columns: repeat(3, 1fr);       
+    .columnaUno{
+        grid-column: auto;
+    }
+      
+  }
+
+.seccionFluida {
+    width: 100%;
+    background-color: greenyellow;
+}
+
+footer .contenido{
+    align-self: center;
+    justify-self: center;
+    grid-column: 2;
+  }
