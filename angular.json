@@ -24,8 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/css/fonts.css",
-              "src/css/styles.css"
+              "src/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -121,6 +120,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "spamueblesaccesorios"
+    }
+  },
+  "defaultProject": "spamueblesaccesorios",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
