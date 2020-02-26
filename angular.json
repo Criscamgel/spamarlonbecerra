@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/css/fonts.css",
               "src/css/styles.css"
             ],
             "scripts": []

@@ -6,6 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Roboto;
     transition: all 0.5s;
   }
 
@@ -14,7 +15,7 @@
  .contenedor{
     width: 100%;
     display: grid;
-    grid-template-columns: 20px auto 20px;
+    grid-template-columns: 15% auto 15%;
     grid-auto-rows: auto;
     margin: 0 auto;
     color: white;    
@@ -39,7 +40,7 @@
   }
   
   @include desktopFull() {
-    background-color: orange;
+    background-color: gray;
     max-width: $mWfull;
   }
 }
@@ -48,14 +49,6 @@
     display: grid;
     grid-column: 2;
     padding: 20px 0px;
-    h1 {
-      align-self: center;
-      justify-self: center;
-    }
-    p {
-      align-self: center;
-      justify-self: center;
-    }
       
   }
 
@@ -91,3 +84,10 @@ footer .contenido{
     justify-self: center;
     grid-column: 2;
   }
+
+/* Formas Fuentes */
+.pLight{
+  font-weight: 300;
+  letter-spacing: 0.03px;
+  font-size: 16px;
+}

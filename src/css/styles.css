@@ -6,6 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Roboto;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -14,7 +15,7 @@
 .contenedor {
   width: 100%;
   display: grid;
-  grid-template-columns: 20px auto 20px;
+  grid-template-columns: 15% auto 15%;
   grid-auto-rows: auto;
   margin: 0 auto;
   color: white;
@@ -49,7 +50,7 @@
 
 @media (min-width: 1200px) {
   .contenedor {
-    background-color: orange;
+    background-color: gray;
     max-width: 1140px;
   }
 }
@@ -58,16 +59,6 @@
   display: grid;
   grid-column: 2;
   padding: 20px 0px;
-}
-
-.contenido h1 {
-  align-self: center;
-  justify-self: center;
-}
-
-.contenido p {
-  align-self: center;
-  justify-self: center;
 }
 
 .dosColumnas {
@@ -101,4 +92,11 @@ footer .contenido {
   align-self: center;
   justify-self: center;
   grid-column: 2;
+}
+
+/* Formas Fuentes */
+.pLight {
+  font-weight: 300;
+  letter-spacing: 0.03px;
+  font-size: 16px;
 }
