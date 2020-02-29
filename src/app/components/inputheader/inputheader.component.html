@@ -1,0 +1,19 @@
+<h1>¡Los 3 primeros meses no pagas nada!</h1>
+<div class="contInputHeader">
+
+    
+    <div class="contMatInput">
+        <mat-form-field appearance="outline">
+            <mat-label>¿Cuanto cuesta el mueble a financiar?</mat-label>
+            <input 
+            matInput 
+            currencyMask
+            placeholder="Placeholder"
+            [formControl]="monto"
+            [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
+            name="monto"
+            >
+        </mat-form-field>
+    </div>
+
+</div>

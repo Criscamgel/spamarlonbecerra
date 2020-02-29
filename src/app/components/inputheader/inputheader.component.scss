@@ -1,0 +1,31 @@
+@import "../../../scss/variables";
+
+h1{
+    color:$blanco;
+    margin: 30px 0px 20px 0px;
+    text-align: center;
+}
+.contInputHeader{
+    display: grid;
+    grid-template-columns: 5% auto 5%;  
+
+    .contMatInput{
+        display: grid;        
+        background-color: $blancoTransparente;
+        padding: 30px 20px 20px 20px;
+        margin-top: 10px;
+        border-radius: 10px;
+        grid-column: 2;
+        
+
+        mat-form-field{
+            width: 90%;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+}
+
+::ng-deep .mat-form-field-wrapper .mat-form-field-flex{
+    background-color: $blanco !important;                
+}

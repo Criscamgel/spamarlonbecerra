@@ -1,0 +1,16 @@
+<div class="contRadioGroup">
+
+    <span class="radio" *ngFor="let radio of radios">
+        <!-- <div class="disableOption"></div> -->
+        <div class="cntPago">
+            <input [id]="radio.id" name="cuota" type="radio" [value]="radio.id">
+            <div class="pago">
+                <div>{{radio.idCuota}} pagos</div>
+                <div class="cuota">$ 100.000 / mes</div>
+            </div>            
+        </div>
+    </span>
+
+    
+
+</div>

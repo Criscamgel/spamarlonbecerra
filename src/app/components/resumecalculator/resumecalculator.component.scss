@@ -1,0 +1,40 @@
+@import "../../../scss/variables";
+
+h3{
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.showMas{
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    margin-top: 20px; 
+    .cntMas{
+        grid-column: 3;
+        text-align: center;        
+    }
+    .cntIcon{
+        justify-items: left;  
+    }
+}
+
+.contResume{
+    background-color: $gris;
+    padding: 20px 30px;
+    margin: 20px 0px;
+    border-radius: 5px;
+    .resume{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 20px 0px;
+        font-size: 14px;
+        .values{
+            grid-column: 2;            
+        }        
+    }
+}
+
+p{
+    line-height: 1.6;    
+}

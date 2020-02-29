@@ -1,0 +1,14 @@
+@import "../../../scss/variables.scss";
+
+.fndHeader{
+    background-image:url($fondoUno);
+    min-height: 100vh;
+  }
+
+/* Formas Fuentes */
+.pLight{
+    font-weight: 300;
+    letter-spacing: 0.03px;
+    font-size: 16px;
+    color: $blanco;
+  }
