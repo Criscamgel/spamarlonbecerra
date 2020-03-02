@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.prod';
 import { CuotasService } from './cuotas.service';
 import { Cuota } from '../models/cuota';
 import { RespuestaCalculadora } from '../models/respuesta-calculadora';
-import { promise } from 'protractor';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +10,13 @@ import { promise } from 'protractor';
 export class DataService {
 
   public cuotas: Cuota[] = [];
+  public dataCuotas: RespuestaCalculadora[] = [];
+  public clickCuota: RespuestaCalculadora;
 
 
-  constructor(public cuotaService: CuotasService) { 
+  constructor(public cuotaService: CuotasService) {
     this.getCuotas();
+    this.clickCuota = new RespuestaCalculadora();
   }
 
   private getCuotas() {
@@ -31,12 +33,13 @@ export class DataService {
       for (const cuota of this.cuotas) {
        data.push(this.data(monto, cuota.idCuota, tasa));
       }
+      this.dataCuotas = data;
       resolve(data);
     });
   }
-
-  public data(monto: number, cuota: number, tasa: number = 0.000001) {
+  public data(monto: number, cuota: number, tasa: number = 0.24) {
     const data: RespuestaCalculadora = new RespuestaCalculadora();
+    data.tasaEfectivaAnual = tasa;
     data.montoSolicitado = monto;
     data.numeroCuotas = cuota;
     data.nominalMesVencido = Math.pow((1 + tasa), (1 / 12)) - 1;
@@ -55,5 +58,9 @@ export class DataService {
     data.valorCuotaConSeguro = data.seguroCuota + data.valorTotalSeguro;
     data.costoMensualSeguro = data.valorTotalSeguro / cuota;
     return data;
+  }
+
+  public getDataCuotas(): any {
+    return new Observable(observer => observer.next(this.dataCuotas));
   }
 }

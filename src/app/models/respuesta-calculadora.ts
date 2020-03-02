@@ -10,6 +10,7 @@ export class RespuestaCalculadora {
     montoSolicitado: number;
     nominalMesVencido: number;
     seguroCuota: number;
+    tasaEfectivaAnual: number;
 
     constructor() {
         this.valorCuotaConSeguro = 0;
@@ -22,6 +23,7 @@ export class RespuestaCalculadora {
         this.montoSolicitado = 0;
         this.nominalMesVencido = 0;
         this.seguroCuota = 0;
+        this.tasaEfectivaAnual = 0;
     }
 
 }

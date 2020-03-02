@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
+
+import { registerLocaleData } from '@angular/common';
+import es from '@angular/common/locales/es';
+
 
 @Component({
   selector: 'app-resumecalculator',
@@ -7,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumecalculatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dataService: DataService) {  }
 
   ngOnInit() {
+    registerLocaleData( es );
   }
 
 }

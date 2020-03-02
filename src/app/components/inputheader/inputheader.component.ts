@@ -25,7 +25,6 @@ export class InputheaderComponent implements OnInit {
       this.dataService.calculateCuota(value)
       .then(data => {
         this.data = data;
-        console.log(this.data);
       })
       .catch(console.error);
     });
