@@ -1,7 +1,7 @@
 <div class="contResume">
     <h3>Detalles del prestamo</h3>
     <hr>
-    <div class="resume">
+    <div [ngClass]="{'mgHidden':!showContent, 'mgShow': showContent}" class="resume">
         <div class="values">
                 <p>Monto a financiar</p>
                 <p>Valor del seguro</p>
@@ -17,7 +17,7 @@
                 <p>{{ dataService.clickCuota.nominalMesVencido == undefined ? 0 : (dataService.clickCuota.nominalMesVencido * 100 | number:'1.0-2':'es')}}%</p>
         </div>        
     </div>
-    <div [ngClass]="{'hidden':!showContent, 'show': showContent}" class="resume">
+    <div [ngClass]="{'hidden':!showContent, 'show': showContent, 'mgShowBottom':showContent}" class="resume">
         <div class="values">
                 <p>Costo 4 x mil</p>
                 <p>Costo de interes</p>

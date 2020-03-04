@@ -7,6 +7,7 @@
     background-position: bottom center;
     @include Asmall() {
       background-image:url($fondoMobile);
+      min-height: 50vh;
     }
   }
 

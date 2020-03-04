@@ -14,4 +14,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  goSolicitud(){
+    window.location.href = 'https://apps.datacredito.com.co/raw/user-account/login/web/index';
+  }
+
 }

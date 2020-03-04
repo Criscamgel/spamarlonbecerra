@@ -29,7 +29,6 @@ h3{
     .resume{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        margin: 20px 0px;
         font-size: 14px;
         @include Asmall(){
             grid-template-columns: repeat(2, 1fr);
@@ -51,4 +50,16 @@ h3{
 
 p{
     line-height: 1.6;    
+}
+
+.mgHidden{
+    margin: 10px 0px;
+}
+
+.mgShow{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.mgShowBottom{
+    margin-bottom: 10px;
 }
