@@ -84,6 +84,9 @@ button{
   font-weight: 600;
   border-radius: 5px;
   height: 6.5vh;
+  @include Asmall(){
+    height: 10vh;
+  }  
 }
 .primario{
   border: 1px solid $negro;
@@ -99,7 +102,10 @@ button{
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
   grid-gap: 15px;
-  margin: 10px 0px;  
+  margin: 10px 0px;
+  @include Asmall(){
+    grid-template-columns: 1fr;
+  }  
 }
 
 .pointer{

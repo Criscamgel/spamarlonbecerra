@@ -1,9 +1,9 @@
 <div class="contRadioGroup">
 
-    <span class="radio" *ngFor="let radio of radios; let i = index" (click)="setCuota(data[i])">
+    <span [ngClass]="radio.meses" class="radio" *ngFor="let radio of radios; let i = index" (click)="setCuota(data[i])">
         <!-- <div class="disableOption"></div> -->
         <div class="cntPago">
-            <input [id]="radio.id" name="cuota" type="radio" [value]="radio.id">
+            <input [id]="radio.idCuota" name="cuota" type="radio" [value]="radio.idCuota">
             <div class="pago">
                 <div>{{radio.idCuota}} pagos</div>
                 <div *ngIf="data[i] !== undefined" class="cuota">$ {{data[i] == undefined ? 0 : (data[i].valorCuotaSinSeguro | number:'1.0':'es')}} / mes</div>

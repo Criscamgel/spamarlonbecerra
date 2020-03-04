@@ -5,12 +5,12 @@ import { Cuota } from '../models/cuota';
   providedIn: 'root'
 })
 export class CuotasService {
-  private cuotas: Cuota[] = [{idCuota: 6, meses: '06', isDisable: false},
-                             {idCuota: 12, meses: '12', isDisable: false},
-                             {idCuota: 18, meses: '18', isDisable: false},
-                             {idCuota: 24, meses: '24', isDisable: true},
-                             {idCuota: 36, meses: '36', isDisable: true},
-                             {idCuota: 48, meses: '48', isDisable: true},
+  private cuotas: Cuota[] = [{idCuota: 6, meses: 'seis', isDisable: false},
+                             {idCuota: 12, meses: 'doce', isDisable: false},
+                             {idCuota: 18, meses: 'diesocho', isDisable: false},
+                             {idCuota: 24, meses: 'veintecuatro', isDisable: true},
+                             {idCuota: 36, meses: 'treintaseis', isDisable: true},
+                             {idCuota: 48, meses: 'cuatrocho', isDisable: true},
                             ];
   constructor() { }
 

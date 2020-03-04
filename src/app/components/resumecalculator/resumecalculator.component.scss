@@ -1,4 +1,5 @@
 @import "../../../scss/variables";
+@import "../../../scss/mixins";
 
 h3{
     text-align: center;
@@ -30,9 +31,15 @@ h3{
         grid-template-columns: repeat(4, 1fr);
         margin: 20px 0px;
         font-size: 14px;
+        @include Asmall(){
+            grid-template-columns: repeat(2, 1fr);
+        }
         .values{
             grid-column: 2;
-            justify-items: left;            
+            justify-items: left;
+            @include Asmall(){
+                grid-column: 1;
+            }            
         }
         .results{
             justify-items: right;
