@@ -1,5 +1,5 @@
-<h1>¡Los 3 primeros meses no pagas nada!</h1>
-<div class="contInputHeader">
+<h1 class="noViewMobile">¡Los 3 primeros meses no pagas nada!</h1>
+<div class="contInputHeader marginGridMobile">
 
     
     <div class="contMatInput">
@@ -8,7 +8,7 @@
             <input 
             matInput 
             currencyMask
-            placeholder="Placeholder"
+            placeholder="¿Cuanto cuesta el mueble a financiar?"
             [formControl]="monto"
             [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
             name="monto"

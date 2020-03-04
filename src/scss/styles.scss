@@ -21,7 +21,6 @@
     margin: 0 auto;    
   
  @include Asmall() {
-    background-color: blue;
   }
   
   @include smallTablet() {
@@ -84,7 +83,7 @@ button{
   cursor: pointer;
   font-weight: 600;
   border-radius: 5px;
-  height: 10vh;
+  height: 6.5vh;
 }
 .primario{
   border: 1px solid $negro;
@@ -102,3 +101,102 @@ button{
   grid-gap: 15px;
   margin: 10px 0px;  
 }
+
+.pointer{
+  cursor: pointer;
+}
+
+/* -------------- View Mobile -------------- */
+
+.viewMobile{
+  display: none;
+  @include Asmall() {
+    display: block;
+  }
+}
+
+h1.titleMobile {
+  font-size: 17px !important;
+}
+
+.marginGridMobile{
+  @include Asmall() {
+    grid-template-columns: 1% auto 1% !important;
+  }
+}
+
+/* -------------- No View Mobile -------------- */
+
+.noViewMobile{
+  display: block;
+  @include Asmall() {
+    display: none;
+  }
+}
+
+/* -------------- Animaciones -------------- */
+
+.hidden{
+  display: none !important;
+  opacity: 0;
+  animation: fade 0.5s;
+}
+
+.show{
+  display: grid !important;
+  opacity: 1;
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animaciones Parte Dos */
+
+.animated {
+  -webkit-animation-duration: 2000mss;
+  animation-duration: 2000ms;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+
+.fast {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+

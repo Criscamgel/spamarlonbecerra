@@ -1,6 +1,6 @@
 export class RespuestaCalculadora {
 
-    valorCuotaConSeguro: number;
+    valorCuotaConSeguro: any;
     valorCuotaSinSeguro: number;
     valorTotalSeguro: number;
     costoMensualSeguro: number;
@@ -8,9 +8,12 @@ export class RespuestaCalculadora {
     valorConDescuento: number;
     numeroCuotas: number;
     montoSolicitado: number;
-    nominalMesVencido: number;
+    nominalMesVencido: any;
     seguroCuota: number;
     tasaEfectivaAnual: number;
+    periodoGracia: number;
+    cuatroPorMil: number;
+    costoDeInteres: number;
 
     constructor() {
         this.valorCuotaConSeguro = 0;
@@ -22,8 +25,10 @@ export class RespuestaCalculadora {
         this.numeroCuotas = 0;
         this.montoSolicitado = 0;
         this.nominalMesVencido = 0;
-        this.seguroCuota = 0;
         this.tasaEfectivaAnual = 0;
+        this.periodoGracia = 3;
+        this.cuatroPorMil = 0;
+        this.costoDeInteres = 0;
     }
 
 }

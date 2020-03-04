@@ -1,8 +1,12 @@
 @import "../../../scss/variables";
+@import "../../../scss/mixins";
 
 .contRadioGroup{
-    display: grid;
+    display: grid;    
     grid-template-columns: repeat(6, 1fr);
+    @include Asmall(){
+        grid-template-rows: repeat(2, 1fr);
+    }
     .cntPago{
         display: grid;
         grid-template-rows: 1fr;

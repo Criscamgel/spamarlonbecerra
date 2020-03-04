@@ -1,8 +1,13 @@
 @import "../../../scss/variables.scss";
+@import "../../../scss/mixins";
 
 .fndHeader{
     background-image:url($fondoUno);
     min-height: 100vh;
+    background-position: bottom center;
+    @include Asmall() {
+      background-image:url($fondoMobile);
+    }
   }
 
 /* Formas Fuentes */
@@ -11,4 +16,10 @@
     letter-spacing: 0.03px;
     font-size: 16px;
     color: $blanco;
+    @include Asmall() {
+      font-size: 13px;
+      color: $negro;
+      text-align: center;
+    }
   }
+  

@@ -12,6 +12,8 @@ import es from '@angular/common/locales/es';
 })
 export class ResumecalculatorComponent implements OnInit {
 
+  public showContent = false;
+
   constructor(public dataService: DataService) {  }
 
   ngOnInit() {

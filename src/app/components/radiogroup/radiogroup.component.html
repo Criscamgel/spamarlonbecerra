@@ -6,7 +6,7 @@
             <input [id]="radio.id" name="cuota" type="radio" [value]="radio.id">
             <div class="pago">
                 <div>{{radio.idCuota}} pagos</div>
-                <div class="cuota">$ {{data[i] == undefined ? 0 : (data[i].valorCuotaConSeguro | number:'1.0-0':'es')}} / mes</div>
+                <div *ngIf="data[i] !== undefined" class="cuota">$ {{data[i] == undefined ? 0 : (data[i].valorCuotaSinSeguro | number:'1.0':'es')}} / mes</div>
             </div>            
         </div>
     </span>

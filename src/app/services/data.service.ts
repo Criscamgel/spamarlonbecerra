@@ -42,21 +42,26 @@ export class DataService {
     data.tasaEfectivaAnual = tasa;
     data.montoSolicitado = monto;
     data.numeroCuotas = cuota;
-    data.nominalMesVencido = Math.pow((1 + tasa), (1 / 12)) - 1;
-    data.valorTotalSeguro = (1200 / 1000000) * monto;
-    data.valorTotalSeguro = Math.round(data.valorTotalSeguro * cuota);
-    // calculo intereses
-    const interes = monto * data.nominalMesVencido;
-    let vlrPartdos = Math.pow((1 + data.nominalMesVencido), - cuota);
-    vlrPartdos = 1 - vlrPartdos;
-    data.valorCuotaSinSeguro = Math.round( interes / vlrPartdos);
-    // // calculo seguro
+    data.nominalMesVencido = (Math.pow((1 + data.tasaEfectivaAnual), (1 / 12)) - 1);
+    data.nominalMesVencido = Number(data.nominalMesVencido);
+    /* .toFixed(6).slice(0, -1) */
+    data.valorTotalSeguro = ((1200 / 1000000) * data.montoSolicitado) * (cuota);
+    data.montoTotalFinanciamiento = data.valorTotalSeguro + data.montoSolicitado;
+    // Valor Futuro
+    const valorFuturo: any = data.montoTotalFinanciamiento * Math.pow(1 + data.nominalMesVencido, data.periodoGracia);
+    // NVM
+    const interes = valorFuturo * data.nominalMesVencido;
+    const vlrPartdos = 1 - Math.pow((1 + data.nominalMesVencido), (- (cuota - data.periodoGracia)));
+    data.valorCuotaSinSeguro = Math.round(interes / vlrPartdos);
+    // calculo seguro
     const interesSeguro = data.valorTotalSeguro * data.nominalMesVencido;
-    let vlrPartdosSeg = Math.pow((1 + data.nominalMesVencido), - cuota);
-    vlrPartdosSeg = 1 - vlrPartdosSeg;
-    data.seguroCuota = Math.round(interesSeguro / vlrPartdosSeg);
-    data.valorCuotaConSeguro = data.seguroCuota + data.valorTotalSeguro;
-    data.costoMensualSeguro = data.valorTotalSeguro / cuota;
+    const vlrPartdosSeg = 1 - Math.pow((1 + data.nominalMesVencido), - (cuota - data.periodoGracia));
+    data.costoMensualSeguro = Math.round(interesSeguro / vlrPartdosSeg);
+    data.valorCuotaConSeguro = data.valorCuotaSinSeguro + data.costoMensualSeguro;
+    // Cuatro por mil
+    data.cuatroPorMil = Math.round((data.montoSolicitado + data.valorTotalSeguro) * 0.004);
+    // Costo de Interes
+    data.costoDeInteres = data.valorTotalSeguro + data.cuatroPorMil;
     return data;
   }
 
