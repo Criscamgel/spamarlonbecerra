@@ -9,6 +9,16 @@
         grid-template-rows: repeat(2, 1fr);
         grid-gap: 5px;
     }
+    @include smallTablet(){
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
+    @include tabletLaptop(){
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
     .cntPago{
         display: grid;
         grid-template-rows: 1fr;
