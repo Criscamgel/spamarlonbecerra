@@ -42,7 +42,6 @@ export class RadiogroupComponent implements OnInit, AfterContentChecked {
   setCuota(value: RespuestaCalculadora) {
     if (value !== undefined) {
       this.dataService.clickCuota = value;
-      console.log(value);
     }
     return;
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
+import { environment } from '../../../environments/environment.prod';
 
 
 @Component({
@@ -9,13 +9,19 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dataService:DataService) { }
+  public env = environment;
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  goSolicitud(){
-    window.location.href = 'https://apps.datacredito.com.co/raw/user-account/login/web/index';
+  goSolicitud() {
+    window.location.href = this.env.urls.experian;
+  }
+
+  onPrint() {
+      window.print();
   }
 
 }

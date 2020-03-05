@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { RadiogroupComponent } from './radiogroup/radiogroup.component';
 import { ResumecalculatorComponent } from './resumecalculator/resumecalculator.component';
+import { PrintComponent } from './print/print.component';
 
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +23,8 @@ const ComponentModule = [
   InputheaderComponent,
   CalculadoraComponent,
   RadiogroupComponent,
-  ResumecalculatorComponent
+  ResumecalculatorComponent,
+  PrintComponent
 ];
 
 

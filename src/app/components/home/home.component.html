@@ -1,3 +1,5 @@
+<app-print></app-print>
+
 <div class="superContenedor fondo fndHeader">
     <!-- Contenedor -->
 
@@ -27,7 +29,7 @@
         <div class="contenido">            
             <app-calculadora></app-calculadora>
             <div class="botones">
-                <button class="primario">Imprimir</button>
+                <button class="primario" (click)="onPrint()">Imprimir</button>
                 <button class="secundario" (click)="goSolicitud()">Iniciar Solicitud</button>
             </div>
         </div>

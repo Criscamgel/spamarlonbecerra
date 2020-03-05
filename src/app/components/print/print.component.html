@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="header">
+        <div class="logo2">
+                <img src="../../../assets/img/logomueblesaccesorios.png">            
+        </div>
+        <div class="logo1">
+                <img src="../../../assets/img/consumerFinance.png">           
+        </div>
+        <div class="title-print">
+            Monto total financiamiento: $ {{dataService.clickCuota.montoSolicitado | number:'1.0':'es'}}
+        </div>
+    </div>
+    <div class="plan-pagos">
+        <div class="header-plan-pagos">
+            Plan de pagos:
+        </div>
+        <div class="body-plan-pagos">
+            <div class="cuota">
+                {{dataService.clickCuota.numeroCuotas}} Pagos
+            </div>
+            <div class="valor">
+                $ {{dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es'}} / mes
+            </div>
+        </div>
+    </div>
+    <div class="descripcion">
+        <p>Gracias a nuestra exclusiva alianza, ¡No pagas nada los primeros 3 meses!</p>
+    </div>
+    <div class="detalles">
+        <div class="detalles-header">
+            Detalles del prestamo
+        </div>
+        <hr class="detalles-line">
+        <div class="detalles-body">
+            <div class="detalles-info">
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Valor cuota sin seguro:</span>
+                        <span class="dot-leader__right">$ {{dataService.clickCuota.valorCuotaSinSeguro | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Costo total del seguro:</span>
+                        <span class="dot-leader__right">$ {{dataService.clickCuota.valorTotalSeguro | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Cuota mensual del seguro:</span>
+                        <span class="dot-leader__right">$ {{dataService.clickCuota.costoMensualSeguro | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Monto total a finaciar:</span>
+                        <span class="dot-leader__right">$ {{dataService.clickCuota.montoTotalFinanciamiento | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Tasa aplicada:</span>
+                        <span class="dot-leader__right">% {{dataService.clickCuota.tasaEfectivaAnual * 100 | number:'1.0':'es'}}</span>
+                </li>
+            </div>
+        </div>
+
+    </div>
+</div>

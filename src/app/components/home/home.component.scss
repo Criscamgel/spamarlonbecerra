@@ -23,4 +23,17 @@
       text-align: center;
     }
   }
+
+  app-print {
+    display: none;
+}
+
+@media print {
+    .superContenedor, footer{
+        display: none;
+    }
+    app-print {
+        display: block;
+    }
+}
   

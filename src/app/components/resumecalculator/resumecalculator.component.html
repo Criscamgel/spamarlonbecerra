@@ -10,7 +10,7 @@
                 <p>Tasa NMV</p>
         </div>
         <div class="results">
-                <p>$ {{ dataService.clickCuota.montoSolicitado == undefined ? 0 : (dataService.clickCuota.montoSolicitado | number:'1.0':'es') }}</p>
+                <p>$ {{ dataService.clickCuota.montoSolicitado == undefined ? 0 : (dataService.clickCuota.montoSolicitado + dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}</p>
                 <p>$ {{ dataService.clickCuota.valorTotalSeguro == undefined ? 0 : (dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}</p>
                 <p>$ {{ dataService.clickCuota.valorCuotaConSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es')}}</p>
                 <p>{{ dataService.clickCuota.tasaEfectivaAnual == undefined ? 0 : (dataService.clickCuota.tasaEfectivaAnual * 100 | number:'1.0':'es')}}%</p>

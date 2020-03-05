@@ -7,5 +7,8 @@ export const environment = {
   minMax: {
     min: 700000,
     max: 20000000
+  },
+  urls: {
+    experian: 'https://apps.datacredito.com.co/raw/user-account/login/web/index'
   }
 };
