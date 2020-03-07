@@ -50,8 +50,20 @@
                         <span class="dot-leader__right">$ {{dataService.clickCuota.montoTotalFinanciamiento | number:'1.0':'es'}}</span>
                 </li>
                 <li class="dot-leader">
-                        <span class="dot-leader__left">Tasa aplicada:</span>
+                        <span class="dot-leader__left">Cuatro por mil:</span>
+                        <span class="dot-leader__right">{{dataService.clickCuota.cuatroPorMil | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                    <span class="dot-leader__left">Costo de Interes:</span>
+                    <span class="dot-leader__right">{{dataService.clickCuota.costoDeInteres | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Tasa E.A:</span>
                         <span class="dot-leader__right">% {{dataService.clickCuota.tasaEfectivaAnual * 100 | number:'1.0':'es'}}</span>
+                </li>
+                <li class="dot-leader">
+                        <span class="dot-leader__left">Tasa NMV:</span>
+                        <span class="dot-leader__right">% {{dataService.clickCuota.nominalMesVencido | number:'1.0':'es'}}</span>
                 </li>
             </div>
         </div>
