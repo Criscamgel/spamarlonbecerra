@@ -62,12 +62,9 @@ export class DataService {
     data.cuatroPorMil = Math.round((data.montoSolicitado + data.valorTotalSeguro) * 0.004);
     // Costo de Interes
     data.costoDeInteres = data.valorTotalSeguro + data.cuatroPorMil + data.montoSolicitado;
-    console.log("data.costoDeInteres", data.costoDeInteres);
     let costoDeInteres = 1 - Math.pow((1 + data.nominalMesVencido), - (cuota - data.periodoGracia));
-    console.log("costoDeInteres 1 --> ", costoDeInteres);
-    data.costoDeInteres = (costoDeInteres * data.valorCuotaSinSeguro) / data.nominalMesVencido;
-    console.log("costoDeInteres 2 --> ", costoDeInteres);
-    data.costoDeInteres -= costoDeInteres;
+    costoDeInteres = (costoDeInteres * data.valorCuotaSinSeguro) / data.nominalMesVencido;
+    data.costoDeInteres = costoDeInteres - data.costoDeInteres;
     return data;
   }
 
