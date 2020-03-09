@@ -21,9 +21,9 @@ export class DataService {
 
   private getCuotas() {
     this.cuotaService.getCuotas()
-    .then(cuotasRadio => {
-      this.cuotas = cuotasRadio;
-    }).catch(console.error);
+      .then(cuotasRadio => {
+        this.cuotas = cuotasRadio;
+      }).catch(console.error);
   }
 
   public calculateCuota(monto: number, tasa?: number): Promise<RespuestaCalculadora[]> {
@@ -31,7 +31,7 @@ export class DataService {
       const data: RespuestaCalculadora[] = [];
       // tslint:disable-next-line: forin
       for (const cuota of this.cuotas) {
-       data.push(this.data(monto, cuota.idCuota, tasa));
+        data.push(this.data(monto, cuota.idCuota, tasa));
       }
       this.dataCuotas = data;
       resolve(data);
@@ -45,7 +45,7 @@ export class DataService {
     data.nominalMesVencido = (Math.pow((1 + data.tasaEfectivaAnual), (1 / 12)) - 1);
     data.nominalMesVencido = Number(data.nominalMesVencido);
     /* .toFixed(6).slice(0, -1) */
-    data.valorTotalSeguro = ((1200 / 1000000) * data.montoSolicitado) * (cuota);
+    data.valorTotalSeguro = Math.round(((1200 / 1000000) * data.montoSolicitado) * (cuota));
     data.montoTotalFinanciamiento = data.valorTotalSeguro + data.montoSolicitado;
     // Valor Futuro
     const valorFuturo: any = data.montoTotalFinanciamiento * Math.pow(1 + data.nominalMesVencido, data.periodoGracia);
@@ -54,8 +54,8 @@ export class DataService {
     const vlrPartdos = 1 - Math.pow((1 + data.nominalMesVencido), (- (cuota - data.periodoGracia)));
     data.valorCuotaSinSeguro = Math.round(interes / vlrPartdos);
     // calculo seguro
-    const interesSeguro = data.valorTotalSeguro * data.nominalMesVencido;
-    const vlrPartdosSeg = 1 - Math.pow((1 + data.nominalMesVencido), - (cuota - data.periodoGracia));
+    const interesSeguro = data.valorTotalSeguro * (1200 / 1000000);
+    const vlrPartdosSeg = 1 - Math.pow((1 + (1200 / 1000000)), (-(cuota - data.periodoGracia)));
     data.costoMensualSeguro = Math.round(interesSeguro / vlrPartdosSeg);
     data.valorCuotaConSeguro = data.valorCuotaSinSeguro + data.costoMensualSeguro;
     // Cuatro por mil
