@@ -3,37 +3,46 @@
     <hr>
     <div [ngClass]="{'mgHidden':!showContent, 'mgShow': showContent}" class="resume">
         <div class="values">
-                <p>Monto a financiar</p>
-                <p>Valor del seguro</p>
-                <p>Valor de la cuota con seguro</p>
-                <p>Tasa E.A</p>
-                <p>Tasa NMV</p>
+            <p>Monto a financiar</p>
+            <p>Valor del seguro</p>
+            <p>Valor de la cuota con seguro</p>
+            <p>Tasa E.A</p>
+            <p>Tasa NMV</p>
         </div>
         <div class="results">
-                <p>$ {{ dataService.clickCuota.montoSolicitado == undefined ? 0 : (dataService.clickCuota.montoSolicitado + dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}</p>
-                <p>$ {{ dataService.clickCuota.valorTotalSeguro == undefined ? 0 : (dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}</p>
-                <p>$ {{ dataService.clickCuota.valorCuotaConSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es')}}</p>
-                <p>{{ dataService.clickCuota.tasaEfectivaAnual == undefined ? 0 : (dataService.clickCuota.tasaEfectivaAnual * 100 | number:'1.0':'es')}}%</p>
-                <p>{{ dataService.clickCuota.nominalMesVencido == undefined ? 0 : (dataService.clickCuota.nominalMesVencido * 100 | number:'1.0-2':'es')}}%</p>
-        </div>        
+            <p>$ {{ dataService.clickCuota.montoSolicitado == undefined ? 0 : (dataService.clickCuota.montoSolicitado + dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}
+            </p>
+            <p>$ {{ dataService.clickCuota.valorTotalSeguro == undefined ? 0 : (dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}
+            </p>
+            <p>$ {{ dataService.clickCuota.valorCuotaConSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es')}}
+            </p>
+            <p>{{ dataService.clickCuota.tasaEfectivaAnual == undefined ? 0 : (dataService.clickCuota.tasaEfectivaAnual * 100 | number:'1.0':'es')}}%
+            </p>
+            <p>{{ dataService.clickCuota.nominalMesVencido == undefined ? 0 : (dataService.clickCuota.nominalMesVencido * 100 | number:'1.0-2':'es')}}%
+            </p>
+        </div>
     </div>
     <div [ngClass]="{'hidden':!showContent, 'show': showContent, 'mgShowBottom':showContent}" class="resume">
         <div class="values">
-                <p>Costo 4 x mil</p>
-                <p>Costo de interes</p>
+            <p>Costo 4 x mil</p>
+            <p>Costo de interes</p>
         </div>
         <div class="results">
-                <p>$ {{ dataService.clickCuota.cuatroPorMil == undefined ? 0 : (dataService.clickCuota.cuatroPorMil | number:'1.0':'es') }}</p>
-                <p>$ {{ dataService.clickCuota.costoDeInteres == undefined ? 0 : (dataService.clickCuota.costoDeInteres | number:'1.0-0':'es') }}</p>
-        </div>        
+            <p>$ {{ dataService.clickCuota.cuatroPorMil == undefined ? 0 : (dataService.clickCuota.cuatroPorMil | number:'1.0':'es') }}
+            </p>
+            <p>$ {{ dataService.clickCuota.costoDeInteres == undefined ? 0 : (dataService.clickCuota.costoDeInteres | number:'1.0-0':'es') }}
+            </p>
+        </div>
     </div>
     <hr>
     <div class="showMas pointer" (click)="showContent = !showContent">
-        <div class="cntMas">
-        <p>MOSTRAR {{showContent ? 'MENOS':'MÁS'}}</p>
-        </div>
-        <div class="cntIcon">
-            <mat-icon>keyboard_arrow_{{showContent ? 'up':'down'}}</mat-icon>
+        <div class="cntShowMas">
+            <div class="cntMas">
+                MOSTRAR {{showContent ? 'MENOS':'MÁS'}}
+            </div>
+            <div class="cntIcon">
+                <mat-icon>keyboard_arrow_{{showContent ? 'up':'down'}}</mat-icon>
+            </div>
         </div>
     </div>
 </div>

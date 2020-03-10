@@ -7,17 +7,35 @@ h3{
 }
 
 .showMas{
-    font-size: 15px;
+    font-size: 13px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    margin-top: 20px; 
-    .cntMas{
-        grid-column: 3;
-        text-align: center;        
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr; 
+    margin-top: 20px;
+    align-items: center;
+    @include Asmall(){
+    grid-template-columns: 1fr 3fr 1fr;    
+    } 
+    @include smallTablet(){
+    grid-template-columns: 1fr 2fr 1fr;    
     }
-    .cntIcon{
-        justify-items: left;  
+    .cntShowMas{
+        display: grid;
+        grid-column: 2;
+        grid-template-columns: 80% 20%;
+        align-items: center;
+        .cntMas{
+            display: grid;
+            grid-column: 1;
+            font-weight: 600;
+            justify-items: center;    
+        }
+        .cntIcon{
+            display: grid;
+            grid-column: 2;
+        }
     }
+    
 }
 
 .contResume{
@@ -28,7 +46,7 @@ h3{
     opacity: 1;
     .resume{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr 2fr 1fr 1fr;
         font-size: 14px;
         @include Asmall(){
             grid-template-columns: repeat(2, 1fr);
