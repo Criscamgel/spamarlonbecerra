@@ -38,6 +38,9 @@ const ComponentModule = [
     BrowserModule,
     CurrencyMaskModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    ComponentModule
   ]
 })
 export class ComponentsModule { }
