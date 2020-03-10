@@ -52,8 +52,8 @@
     input[type="radio"] + div {
     border: none;    
     background-color: $gris;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 8vh;
     border-radius: 5px;
     padding: 5px 5px;
     }
@@ -62,8 +62,8 @@
     /* style for the checked/selected state */
     border: 1px solid $textoUno;
     background-color: $blanco;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 8vh;
     border-radius: 5px;
     padding: 5px 5px;
     }
@@ -71,6 +71,6 @@
 
 .cuota{
     font-weight: 300;
-    font-size: 12px;
+    font-size: 11px;
     margin: 10px 0px;
 }

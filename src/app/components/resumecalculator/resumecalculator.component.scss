@@ -49,7 +49,8 @@ h3{
         grid-template-columns: 1fr 2fr 1fr 1fr;
         font-size: 14px;
         @include Asmall(){
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 2fr 1fr;
+            font-size: 12px;
         }
         .values{
             grid-column: 2;
