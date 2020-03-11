@@ -1,0 +1,7 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins";
+
+.contMenu{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}

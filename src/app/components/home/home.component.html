@@ -1,0 +1,48 @@
+<app-print></app-print>
+
+<div class="superContenedor fondo fndHeader">
+    <!-- Contenedor -->
+
+    <section class="contenedor">
+        <div class="contenido">
+            <p class="pLight">Financia tus muebles con el Banco Santander</p>
+        </div>
+    </section>
+
+    <app-navbar></app-navbar>
+
+    <section class="seccionFluida">
+        <div class="contenedor marginGridMobile">
+            <div class="contenido">
+
+                <app-inputheader></app-inputheader>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<div class="superContenedor">
+    <section class="contenedor marginGridMobile">
+        <div class="contenido">            
+            <app-calculadora></app-calculadora>
+            <div class="botones">
+                <button class="primario" (click)="onPrint()">Imprimir</button>
+                <button class="secundario" (click)="goSolicitud()">Iniciar Solicitud</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="seccionFluida footer">
+    <div class="contenedor">
+        <div class="contenido noViewMobile">
+                © 2020 Dream Rest S.A.S - Muebles & Accesorios S.A.<br>All Rights Reserved Kilometro 2 Vía Briceño - Sopo (Vereda Pueblo Viejo) Cundinamarca<br> PBX: 667-1267 | NIT: 860528329-5 | servicioalcliente@mueblesyaccesorios.com.co
+        </div>
+        <div class="contenido viewMobile">
+            © 2020 Dream Rest S.A.S - Muebles & Accesorios S.A.
+        </div>
+    </div>
+</footer>
