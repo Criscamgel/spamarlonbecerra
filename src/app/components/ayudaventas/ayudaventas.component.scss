@@ -1,6 +1,13 @@
 @import "../../../scss/variables.scss";
 @import "../../../scss/mixins";
 
+.fndHeader{
+    min-height: 70vh;
+    @include Asmall() {
+      min-height: 50vh;
+    }
+  }
+
 /* Formas Fuentes */
 .pLight{
     font-weight: 300;
@@ -11,26 +18,13 @@
       font-size: 13px;
       text-align: center;
     }
-  }
+  }  
 
-  app-print {
-    display: none;
-}
-
-.superHeader{
-  background-color: $negro;
-  margin-bottom: 8px;  
-  .contSuperHeader{
-    padding: 10px 0px;
-  }
-}
-
-@media print {
-    .superContenedor, app-footer{
-        display: none;
+  .superHeader{
+    background-color: $negro;
+    margin-bottom: 8px;  
+    .contSuperHeader{
+      padding: 10px 0px;
     }
-    app-print {
-        display: block;
-    }
-}
+  }
   

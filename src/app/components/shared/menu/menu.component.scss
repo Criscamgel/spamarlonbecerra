@@ -1,0 +1,12 @@
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixins";
+
+.contMenu{
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 5px;
+}
+
+.itemMenu{
+    grid-row: 1;
+}

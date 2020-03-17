@@ -1,5 +1,3 @@
-<app-print></app-print>
-
 <div class="superContenedor fondo fndHeader">
     <!-- Contenedor -->
 
@@ -17,8 +15,6 @@
         <div class="contenedor marginGridMobile">
             <div class="contenido">
 
-                <app-inputheader></app-inputheader>
-
             </div>
         </div>
     </section>
@@ -29,13 +25,25 @@
 <div class="superContenedor">
     <section class="contenedor marginGridMobile">
         <div class="contenido">
-            <mat-checkbox>Paciente con convenio</mat-checkbox>            
-            <app-calculadora></app-calculadora>
+
+            <app-itemsconimagenes></app-itemsconimagenes>
+            <app-itemparrafo></app-itemparrafo>
+
+        </div>
+    </section>
+</div>
+<app-tipsventas></app-tipsventas>
+<app-contacto></app-contacto>
+
+<div class="superContenedor">
+    <section class="contenedor marginGridMobile">
+        <div class="contenido">
+
             <div class="botones">
-                <button class="primario" (click)="onPrint()">Imprimir</button>
-                <button class="secundario" (click)="goSolicitud()">Iniciar Solicitud</button>
-                <a class="viewMobile" [routerLink]="['/ayuda']"><button class="secundario">Ayuda Comercial</button></a>
+                <a class="viewMobile marginDiezBottom" [routerLink]="['/home']"><button
+                        class="secundario">Volver</button></a>
             </div>
+
         </div>
     </section>
 </div>

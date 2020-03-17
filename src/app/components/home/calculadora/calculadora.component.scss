@@ -1,0 +1,22 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/variables";
+
+*{
+    color: $textoUno;
+}
+
+h1{
+    color: $blanco;
+    text-align: left;
+    font-size: 25px;
+    margin: 0px 0px 20px 0px;
+    font-weight: 500;
+    @include Asmall(){
+        font-size: 12px;
+        text-align: center;
+    }
+    @include smallTablet(){
+        font-size: 15px;
+        text-align: center;
+    }
+}

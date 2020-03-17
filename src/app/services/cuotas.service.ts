@@ -8,9 +8,7 @@ export class CuotasService {
   private cuotas: Cuota[] = [{idCuota: 6, meses: 'seis', isDisable: false},
                              {idCuota: 12, meses: 'doce', isDisable: false},
                              {idCuota: 18, meses: 'diesocho', isDisable: false},
-                             {idCuota: 24, meses: 'veintecuatro', isDisable: true},
-                             {idCuota: 36, meses: 'treintaseis', isDisable: true},
-                             {idCuota: 48, meses: 'cuatrocho', isDisable: true},
+                             {idCuota: 24, meses: 'veintecuatro', isDisable: true}
                             ];
   constructor() { }
 

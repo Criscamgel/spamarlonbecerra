@@ -1,0 +1,5 @@
+<div class="contMenu">
+    <div *ngFor="let item of itemsMenu" class="itemMenu">
+       <a *ngIf="router.url !== item.url" [routerLink]="[item.url]">{{ item.name }}</a>
+    </div>
+</div>
