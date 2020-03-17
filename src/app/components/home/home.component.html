@@ -29,7 +29,13 @@
 <div class="superContenedor">
     <section class="contenedor marginGridMobile">
         <div class="contenido">
-            <mat-checkbox>Paciente con convenio</mat-checkbox>            
+
+            <mat-checkbox
+            [formControl]="convenio"
+            [checked]="convenioSet()"
+            >Paciente con convenio
+            </mat-checkbox> 
+
             <app-calculadora></app-calculadora>
             <div class="botones">
                 <button class="primario" (click)="onPrint()">Imprimir</button>

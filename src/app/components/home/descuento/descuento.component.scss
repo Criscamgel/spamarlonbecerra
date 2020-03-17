@@ -1,0 +1,19 @@
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixins";
+
+.contMatInput{
+    background-color: $blanco;
+    padding: 25px;
+    border-radius: 7px;
+    margin: 20px 0px;
+    text-align: center;    
+    border: solid 1px #000000;
+    h1{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    mat-form-field{
+        padding: 20px 0px;
+        width: 100%;
+    }
+}

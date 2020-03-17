@@ -21,6 +21,7 @@ import { ItemparrafoComponent } from './ayudaventas/itemparrafo/itemparrafo.comp
 import { RouterModule } from '@angular/router';
 import { TipsventasComponent } from './ayudaventas/tipsventas/tipsventas.component';
 import { ContactoComponent } from './ayudaventas/contacto/contacto.component';
+import { DescuentoComponent } from './home/descuento/descuento.component';
 
 
 const ComponentModule = [
@@ -43,7 +44,7 @@ const ComponentModule = [
 
 
 @NgModule({
-  declarations: [ComponentModule],
+  declarations: [ComponentModule, DescuentoComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

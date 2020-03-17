@@ -14,6 +14,7 @@ export class DataService {
   public clickCuota: RespuestaCalculadora;
   public constanteSeguro = 1200 / 1000000;
   public constanteCuatroPorMil = 4 / 1000;
+  public convenio = false;
 
 
   constructor(public cuotaService: CuotasService) {

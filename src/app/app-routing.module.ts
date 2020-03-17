@@ -5,7 +5,8 @@ import { AyudaventasComponent } from './components/ayudaventas/ayudaventas.compo
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'ayuda', component: AyudaventasComponent }
+  { path: 'ayuda', component: AyudaventasComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({

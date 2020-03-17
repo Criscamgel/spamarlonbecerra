@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
+import { FormControl } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -10,10 +12,15 @@ import { environment } from '../../../environments/environment.prod';
 export class HomeComponent implements OnInit {
 
   public env = environment;
+  public convenio = new FormControl(false);
 
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
+  }
+
+  convenioSet() {
+    this.dataService.convenio = this.convenio.value;
   }
 
   goSolicitud() {

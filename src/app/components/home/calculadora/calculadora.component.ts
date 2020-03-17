@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-calculadora',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CalculadoraComponent {
 
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
 
 }
