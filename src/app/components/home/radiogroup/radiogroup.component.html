@@ -2,7 +2,7 @@
 
     <span [ngClass]="radio.meses" class="radio" *ngFor="let radio of radios; let i = index" (click)="setCuota(data[i])">
         <!-- <div class="disableOption"></div> -->
-        <div class="cntPago">
+        <div *ngIf="!dataService.convenio || radio.idCuota === 6 || radio.idCuota === 12" class="cntPago">
             <input [id]="radio.idCuota" name="cuota" type="radio" [value]="radio.idCuota">
             <div class="pago">
                 <div class="periodo" [ngClass]="{paddingDiezTop: data[i] !== undefined}">{{radio.idCuota}} pagos</div>
