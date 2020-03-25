@@ -1,16 +1,14 @@
 <div class="contRadioGroup">
 
-    <span [ngClass]="radio.meses" class="radio" *ngFor="let radio of radios; let i = index" (click)="setCuota(data[i])">
+    <span [ngClass]="radio.nombre" class="radio" *ngFor="let radio of radios; let i = index" (click)="setCuota(data[i])">
         <!-- <div class="disableOption"></div> -->
-        <div *ngIf="!dataService.convenio || radio.idCuota === 6 || radio.idCuota === 12" class="cntPago">
-            <input [id]="radio.idCuota" name="cuota" type="radio" [value]="radio.idCuota">
+        <div *ngIf="!dataService.convenio || radio.valorNumerico === 6 || radio.valorNumerico === 12" class="cntPago">
+            <input [id]="radio.idCuota" name="cuota" type="radio" [value]="radio.valorNumerico">
             <div class="pago">
-                <div class="periodo" [ngClass]="{paddingDiezTop: data[i] !== undefined}">{{radio.idCuota}} pagos</div>
+                <div class="periodo" [ngClass]="{paddingDiezTop: data[i] !== undefined}">{{radio.valorTexto}}</div>
                 <div *ngIf="data[i] !== undefined" class="cuota">$ {{data[i] == undefined ? 0 : (data[i].valorCuotaSinSeguro | number:'1.0':'es')}} /mes</div>
             </div>            
         </div>
-    </span>
-
-    
+    </span>  
 
 </div>

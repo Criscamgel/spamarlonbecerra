@@ -3,6 +3,7 @@ import { CuotasService } from './cuotas.service';
 import { Cuota } from '../models/cuota';
 import { RespuestaCalculadora } from '../models/respuesta-calculadora';
 import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 
 @Injectable({
   providedIn: 'root'
@@ -15,18 +16,18 @@ export class DataService {
   public constanteSeguro = 1200 / 1000000;
   public constanteCuatroPorMil = 4 / 1000;
   public convenio = false;
+  private subscription: Subscription;
 
-
-  constructor(public cuotaService: CuotasService) {
+  constructor(public cuotasService: CuotasService) {
     this.getCuotas();
     this.clickCuota = new RespuestaCalculadora();
   }
 
   private getCuotas() {
-    this.cuotaService.getCuotas()
-      .then(cuotasRadio => {
-        this.cuotas = cuotasRadio;
-      }).catch(console.error);
+    this.subscription = this.cuotasService.observableCuotas
+    .subscribe(item => {
+    this.cuotas = item;
+    });
   }
 
   public calculateCuota(monto: number, tasa?: number): Promise<RespuestaCalculadora[]> {
@@ -34,7 +35,7 @@ export class DataService {
       const data: RespuestaCalculadora[] = [];
       // tslint:disable-next-line: forin
       for (const cuota of this.cuotas) {
-        data.push(this.data(monto, cuota.idCuota, tasa));
+        data.push(this.data(monto, cuota.valorNumerico, tasa));
       }
       this.dataCuotas = data;
       resolve(data);

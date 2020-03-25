@@ -3,7 +3,7 @@ import { Cuota } from 'src/app/models/cuota';
 import { CuotasService } from 'src/app/services/cuotas.service';
 import { RespuestaCalculadora } from 'src/app/models/respuesta-calculadora';
 import { DataService } from 'src/app/services/data.service';
-
+import { Subscription } from 'rxjs/Subscription';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 
@@ -15,7 +15,9 @@ import es from '@angular/common/locales/es';
 export class RadiogroupComponent implements OnInit, AfterContentChecked {
   public radios: Cuota[];
   public data: RespuestaCalculadora[] = [];
-  constructor(public serviceCuota: CuotasService,
+  private subscription: Subscription;
+
+  constructor(public cuotasService: CuotasService,
               public dataService: DataService) {
 
   }
@@ -26,12 +28,12 @@ export class RadiogroupComponent implements OnInit, AfterContentChecked {
   }
 
   public initializer() {
-    this.serviceCuota.getCuotas()
-    .then(cuotasRadio => {
-      this.radios = cuotasRadio;
-    })
-    .catch(console.error);
+    this.subscription = this.cuotasService.observableCuotas
+    .subscribe(item => {
+    this.radios = item;
+  });
   }
+
 
   ngAfterContentChecked(): void {
       this.dataService.getDataCuotas().subscribe((result: any) => {

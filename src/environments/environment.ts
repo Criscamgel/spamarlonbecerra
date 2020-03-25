@@ -12,7 +12,8 @@ export const environment = {
     max: 20000000
   },
   urls: {
-    experian: 'https://apps.datacredito.com.co/raw/user-account/login/web/index'
+    experian: 'https://apps.datacredito.com.co/raw/user-account/login/web/index',
+    backBdUrl: 'https://bd-config-calculators.herokuapp.com'
   }
 };
 
