@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Iteminfo } from 'src/app/models/itemayuda';
-import { environment } from 'src/environments/environment.prod';
+import { AyudaVentasService } from 'src/app/services/ayuda-ventas.service';
 
 @Component({
   selector: 'app-tipsventas',
@@ -9,11 +9,12 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TipsventasComponent implements OnInit {
 
-  public itemsVentas: Iteminfo[] = environment.tipsVentas;
+  public itemsVentas: Iteminfo[];
 
-  constructor() { }
+  constructor(private ayudaventasService: AyudaVentasService) { }
 
   ngOnInit() {
+    this.itemsVentas = this.ayudaventasService.tipsVentas;
   }
 
 }

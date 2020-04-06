@@ -4,6 +4,7 @@
 .contRadioGroup{
     display: grid;    
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "overlap";
     grid-gap: 5px;
     @include laptopDesktop(){
         grid-gap: 20px;
@@ -15,6 +16,7 @@
         display: grid;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
+        grid-area: 1/1/1/1;
         input{
             cursor: pointer;
             grid-row: 1;
@@ -68,3 +70,16 @@
     padding: 5px 5px;
     }
 }
+
+span.radio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    .disableOption {
+        background-color: $blancoTransparente;
+        height: 100%;
+        grid-area: 1/1/1/1;
+        z-index: 1;
+    }
+}
+

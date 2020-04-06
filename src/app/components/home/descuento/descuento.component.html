@@ -11,10 +11,10 @@
             [formControl]="descuento"
             [options]="{ align: 'left', prefix: '% ', thousands: '.', decimal: ',', precision: 0 }"
             name="descuento"
-            [min]="env.minMax.min"                                    
-            [max]="env.minMax.max"                                    
+            [min]="descuentoMinimo"                                    
+            [max]="descuentoMaximo"                              
             required>                               
-            <mat-error *ngIf="descuento.errors?.min">El valor mínimo a financiar es de $ {{env.minMax.min | number:'1.0':'es'}}</mat-error>       
-            <mat-error *ngIf="descuento.errors?.max">El valor máximo a financiar es de $ {{env.minMax.max | number:'1.0':'es'}}</mat-error>       
+            <mat-error *ngIf="descuento.errors?.min">El valor mínimo a financiar es de {{descuentoMinimo}} %</mat-error>       
+            <mat-error *ngIf="descuento.errors?.max">El valor máximo a financiar es de {{descuentoMaximo}} %</mat-error>       
         </mat-form-field>
     </div>

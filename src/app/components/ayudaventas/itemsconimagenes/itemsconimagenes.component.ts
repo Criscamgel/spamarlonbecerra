@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Iteminfo } from 'src/app/models/itemayuda';
-import { environment } from 'src/environments/environment.prod';
+import { AyudaVentasService } from 'src/app/services/ayuda-ventas.service';
 
 @Component({
   selector: 'app-itemsconimagenes',
@@ -9,11 +9,12 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ItemsconimagenesComponent implements OnInit {
 
-  public itemsAyuda: Iteminfo[] = environment.itemsAyuda;
+  public itemsAyuda: Iteminfo[];
 
-  constructor() { }
+  constructor(private ayudaventasService: AyudaVentasService) { }
 
   ngOnInit() {
+    this.itemsAyuda = this.ayudaventasService.itemsAyuda;
   }
 
 }

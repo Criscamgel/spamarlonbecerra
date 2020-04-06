@@ -22,6 +22,8 @@ import { RouterModule } from '@angular/router';
 import { TipsventasComponent } from './ayudaventas/tipsventas/tipsventas.component';
 import { ContactoComponent } from './ayudaventas/contacto/contacto.component';
 import { DescuentoComponent } from './home/descuento/descuento.component';
+import { CuotaPipe } from '../pipes/cuota.pipe';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 const ComponentModule = [
@@ -44,7 +46,7 @@ const ComponentModule = [
 
 
 @NgModule({
-  declarations: [ComponentModule, DescuentoComponent],
+  declarations: [ComponentModule, DescuentoComponent, CuotaPipe, LoaderComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

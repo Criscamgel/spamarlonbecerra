@@ -9,6 +9,4 @@ import { DataService } from 'src/app/services/data.service';
 export class CalculadoraComponent {
 
   constructor(public dataService: DataService) { }
-
-
-}
+  }

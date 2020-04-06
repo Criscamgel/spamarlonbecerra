@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
-import { environment } from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-descuento',
@@ -9,12 +8,45 @@ import { environment } from '../../../../environments/environment.prod';
   styleUrls: ['./descuento.component.scss']
 })
 export class DescuentoComponent implements OnInit {
-  public env = environment;
-  public descuento = new FormControl(0);
-
+  public descuento = new FormControl({ value: 0, disabled: true });
+  public descuentoMaximo: number;
+  public descuentoMinimo: number;
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
+    this.initializer();
+  }
+  initializer() {
+    this.descuentoChange();
+    this.getObservablePagoChange();
+  }
+
+  descuentoChange() {
+    this.descuento.valueChanges.subscribe(value => {
+      this.dataService.setDescuento(value);
+    });
+  }
+
+  getObservablePagoChange() {
+    this.dataService.observablePagoSeleccionado.
+      subscribe((value: number) => {
+        if (value !== undefined) {
+          this.descuento.enable();
+          switch (value) {
+            case 6:
+              this.descuentoMinimo = 1;
+              this.descuentoMaximo = 8.9;
+              break;
+            case 12:
+              this.descuentoMinimo = 1;
+              this.descuentoMaximo = 4;
+              break;
+
+            default:
+              break;
+          }
+        }
+      });
   }
 
 }

@@ -1,21 +1,32 @@
-import { Component, OnInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cuota } from 'src/app/models/cuota';
 import { CuotasService } from 'src/app/services/cuotas.service';
 import { RespuestaCalculadora } from 'src/app/models/respuesta-calculadora';
 import { DataService } from 'src/app/services/data.service';
-import { Subscription } from 'rxjs/Subscription';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-radiogroup',
   templateUrl: './radiogroup.component.html',
   styleUrls: ['./radiogroup.component.scss'],
+  animations: [
+    trigger('animationFadeOut', [
+      transition(':enter', [
+        style({ opacity: '1' }),
+        animate(300)
+      ]),
+      transition(':leave', [
+        animate(300, style({ opacity: '0' }))
+      ]),
+      state('*', style({ opacity: '1' })),
+    ])
+  ]
 })
-export class RadiogroupComponent implements OnInit, AfterContentChecked {
+export class RadiogroupComponent implements OnInit {
   public radios: Cuota[];
   public data: RespuestaCalculadora[] = [];
-  private subscription: Subscription;
 
   constructor(public cuotasService: CuotasService,
               public dataService: DataService) {
@@ -28,24 +39,20 @@ export class RadiogroupComponent implements OnInit, AfterContentChecked {
   }
 
   public initializer() {
-    this.subscription = this.cuotasService.observableCuotas
-    .subscribe(item => {
-    this.radios = item;
+    this.dataService.disabledRadios = true;
+    this.cuotasService.getCuotas()
+    .subscribe(cuotasRadio => {
+      this.radios = cuotasRadio;
+      this.cuotasService.cuotasCargadas = true;
   });
   }
 
-
-  ngAfterContentChecked(): void {
-      this.dataService.getDataCuotas().subscribe((result: any) => {
-        this.data = result;
-      });
-  }
-
-  setCuota(value: RespuestaCalculadora) {
-    if (value !== undefined) {
-      this.dataService.clickCuota = value;
+  setCuota(valorNumerico: number) {
+    this.dataService.setPagoSeleccionado(valorNumerico);
+    const cuota = this.dataService.getDataCuotas.filter(cuot => cuot.numeroCuota === valorNumerico);
+    if (cuota.length > 0) {
+      this.dataService.setClikCuota = cuota[0];
     }
-    return;
   }
 
 }

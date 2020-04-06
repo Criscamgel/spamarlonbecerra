@@ -10,7 +10,7 @@
             <p>Costo mensual del seguro</p>           
         </div>
         <div class="results">
-            <p>$ {{ dataService.clickCuota.montoTotalFinanciamiento == undefined ? 0 : (dataService.clickCuota.montoTotalFinanciamiento | number:'1.0':'es') }}
+            <p>$ {{ dataService.clickCuota.montoAFinanciar == undefined ? 0 : (dataService.clickCuota.montoAFinanciar | number:'1.0':'es') }}
             </p>
             <p>$ {{ dataService.clickCuota.valorTotalSeguro == undefined ? 0 : (dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}
             </p>
@@ -25,18 +25,15 @@
     <div [ngClass]="{'hidden':!showContent, 'show': showContent, 'mgShowBottom':showContent}" class="resume">
         <div class="values">
             <p>Costo 4 x mil</p>
-            <p>Costo de interes</p>
             <p>Tasa E.A</p>
             <p>Tasa NMV</p>
         </div>
         <div class="results">
-            <p>$ {{ dataService.clickCuota.cuatroPorMil == undefined ? 0 : (dataService.clickCuota.cuatroPorMil | number:'1.0':'es') }}
+            <p>$ {{ dataService.getClickCuota.cuatroxMil == undefined ? 0 : (dataService.getClickCuota.cuatroxMil | number:'1.0':'es') }}
             </p>
-            <p>$ {{ dataService.clickCuota.costoDeInteres == undefined ? 0 : (dataService.clickCuota.costoDeInteres | number:'1.0-0':'es') }}
+            <p>{{ dataService.getClickCuota.tasa == undefined ? 0 : (dataService.getClickCuota.tasa * 100 | number:'1.0':'es')}}%
             </p>
-            <p>{{ dataService.clickCuota.tasaEfectivaAnual == undefined ? 0 : (dataService.clickCuota.tasaEfectivaAnual * 100 | number:'1.0':'es')}}%
-            </p>
-            <p>{{ dataService.clickCuota.nominalMesVencido == undefined ? 0 : (dataService.clickCuota.nominalMesVencido * 100 | number:'1.0-2':'es')}}%
+            <p>{{ dataService.getClickCuota.nominalMesVencido == undefined ? 0 : (dataService.getClickCuota.nominalMesVencido * 100 | number:'1.0-2':'es')}}%
             </p>
         </div>
     </div>

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
 import { FormControl } from '@angular/forms';
-import { RespuestaCalculadora } from 'src/app/models/respuesta-calculadora';
-import { environment } from '../../../../environments/environment.prod';
-
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
+import { Constants } from 'src/app/models/constants';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-inputheader',
@@ -15,24 +13,24 @@ import es from '@angular/common/locales/es';
 export class InputheaderComponent implements OnInit {
 
   public monto = new FormControl(0);
-  public data: RespuestaCalculadora[] = [];
-  public env = environment;
+  public montoMaximo = Constants.montoMaximo;
+  public montoMinimo = Constants.montoMinimo;
 
-  constructor(private dataService: DataService) {
-    this.nameChange();
+  constructor(public dataService: DataService) {
   }
 
   ngOnInit() {
     registerLocaleData( es );
+    this.montoChange();
   }
 
-  nameChange() {
+  montoChange() {
     this.monto.valueChanges.subscribe(value => {
-      this.dataService.calculateCuota(value)
-      .then(data => {
-        this.data = data;
-      })
-      .catch(console.error);
+      if ((value < this.montoMinimo) || (value > this.montoMaximo) ) {
+        this.dataService.setMonto(0);
+      } else {
+        this.dataService.setMonto(value);
+      }
     });
   }
 

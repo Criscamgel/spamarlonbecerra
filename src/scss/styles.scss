@@ -261,3 +261,31 @@ mat-checkbox{
   border: 1px solid $blanco;
 }
 
+/* Cont Loader */
+.contLoader{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "overlay";
+  app-loader{
+    grid-row: 1;
+    grid-row: 1;
+    grid-area: overlay;
+    z-index: 2;
+  }
+}
+
+.contLoader > div{
+  grid-area: overlay;
+}
+
+#loaderPrincipal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+

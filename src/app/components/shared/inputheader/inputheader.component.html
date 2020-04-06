@@ -13,11 +13,11 @@
             [formControl]="monto"
             [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
             name="monto"
-            [min]="env.minMax.min"                                    
-            [max]="env.minMax.max"                                    
+            [min]="montoMinimo"                                    
+            [max]="montoMaximo"                                    
             required>                               
-            <mat-error *ngIf="monto.errors?.min">El valor mínimo a financiar es de $ {{env.minMax.min | number:'1.0':'es'}}</mat-error>       
-            <mat-error *ngIf="monto.errors?.max">El valor máximo a financiar es de $ {{env.minMax.max | number:'1.0':'es'}}</mat-error>       
+            <mat-error *ngIf="monto.errors?.min">El valor mínimo a financiar es de $ {{montoMinimo | number:'1.0':'es'}}</mat-error>       
+            <mat-error *ngIf="monto.errors?.max">El valor máximo a financiar es de $ {{montoMaximo | number:'1.0':'es'}}</mat-error>       
         </mat-form-field>
     </div>
 
