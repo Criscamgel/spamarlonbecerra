@@ -7,7 +7,7 @@
                 <img src="../../../assets/img/consumerFinance.png">           
         </div>
         <div class="title-print">
-            Monto solicitado: $ {{dataService.clickCuota.montoSolicitado | number:'1.0':'es'}}
+            Monto solicitado: $ {{dataService.clickCuota.montoAFinanciar | number:'1.0':'es'}}
         </div>
     </div>  
     <div class="plan-pagos">
@@ -16,7 +16,7 @@
         </div>
         <div class="body-plan-pagos">
             <div class="cuota">
-                {{dataService.clickCuota.numeroCuotas}} Pagos
+                {{dataService.clickCuota.numeroCuota}} Pagos
             </div>
             <div class="valor">
                 $ {{dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es'}} / mes
@@ -55,7 +55,7 @@
                 </li>
                 <li class="dot-leader">
                         <span class="dot-leader__left">Cuatro por mil:</span>
-                        <span class="dot-leader__right">{{dataService.clickCuota.cuatroPorMil | number:'1.0':'es'}}</span>
+                        <span class="dot-leader__right">{{dataService.clickCuota.cuatroxMil | number:'1.0':'es'}}</span>
                 </li>
                 <li class="dot-leader">
                         <span class="dot-leader__left">Tasa E.A:</span>

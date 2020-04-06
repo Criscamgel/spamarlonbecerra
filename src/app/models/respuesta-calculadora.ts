@@ -1,12 +1,5 @@
 export class RespuestaCalculadora {
 
-    
-    /* numeroCuotas: number;
-    montoSolicitado: number;
-    seguroCuota: number;
-    tasaEfectivaAnual: number;
-    periodoGracia: number; */
-
     valorCuotaConSeguro: number;
     valorCuotaSinSeguro: number;
     valorTotalSeguro: number;
