@@ -11,8 +11,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 })
 export class DataService {
 
-  private dataCuotas: RespuestaCalculadora[] = [];
-  private clickCuota: RespuestaCalculadora;
+  public dataCuotas: RespuestaCalculadora[] = [];
+  public clickCuota: RespuestaCalculadora;
   public monto: number;
   public descuento: number;
   public pagoSeleccionado: number;
