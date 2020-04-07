@@ -255,10 +255,18 @@ a, a:link, a:visited, a:hover, a:active{
 mat-checkbox{
   color: $blanco;
   margin: 20px 0px;
+  @include Asmall{
+    margin: 0;
+    color: black;
+    text-align: center;    
+  }
 }
 
 .mat-checkbox-frame {
   border: 1px solid $blanco;
+  @include Asmall{
+    border: 1px solid black;   
+  }
 }
 
 /* Cont Loader */

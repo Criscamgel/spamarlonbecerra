@@ -17,7 +17,6 @@ export class DescuentoComponent implements OnInit {
     this.initializer();
   }
   initializer() {
-    /* this.dataService.disabledRadios = true; */
     this.descuentoChange();
     this.getObservablePagoChange();
   }

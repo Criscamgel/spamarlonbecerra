@@ -14,6 +14,8 @@ h1{
     @include Asmall(){
         font-size: 12px;
         text-align: center;
+        color: $textoUno;
+        margin: 20px 0px 20px 0px;
     }
     @include smallTablet(){
         font-size: 15px;
