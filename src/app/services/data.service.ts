@@ -22,6 +22,7 @@ export class DataService {
   public convenio = false;
   public cuotaCalculada = false;
   public disabledRadios;
+  public descuentoErroneo = false;
 
   constructor(private http: HttpClient) {
     this.clickCuota = new RespuestaCalculadora();

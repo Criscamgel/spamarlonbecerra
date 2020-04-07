@@ -17,13 +17,19 @@ export class DescuentoComponent implements OnInit {
     this.initializer();
   }
   initializer() {
+    /* this.dataService.disabledRadios = true; */
     this.descuentoChange();
     this.getObservablePagoChange();
   }
 
   descuentoChange() {
     this.descuento.valueChanges.subscribe(value => {
-      this.dataService.setDescuento(value);
+      if (this.descuento.value < this.descuentoMinimo || this.descuento.value > this.descuentoMaximo) {
+        this.dataService.descuentoErroneo = true;
+    } else {
+        this.dataService.descuentoErroneo = false;
+        this.dataService.setDescuento(value);
+      }
     });
   }
 

@@ -71,13 +71,14 @@ export class HomeComponent implements OnInit {
   getOservableDescuento() {
     this.dataService.observableDescuento
     .subscribe((value: number) => {
-    if (value !== 0 || value !== undefined) {
-    this.dataService.disabledRadios = false;
+      console.log(this.dataService.descuentoErroneo);
+      console.log(value);
+    if (value !== 0 && value !== null && !this.dataService.descuentoErroneo) {
     this.request.descuento = value;
     this.dataService.cuotaCalculada = false;
     this.calcularCuota();
     } else {
-      this.dataService.disabledRadios = true;
+      this.dataService.cuotaCalculada = true;
     }
     });
   }
