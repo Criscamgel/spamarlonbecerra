@@ -10,15 +10,15 @@
             <p>Costo mensual del seguro</p>           
         </div>
         <div class="results">
-            <p>$ {{ dataService.clickCuota.montoAFinanciar == undefined ? 0 : (dataService.clickCuota.montoAFinanciar | number:'1.0':'es') }}
+            <p>$ {{ dataService.getClickCuota.montoAFinanciar == undefined ? 0 : (dataService.clickCuota.montoAFinanciar | number:'1.0':'es') }}
             </p>
-            <p>$ {{ dataService.clickCuota.valorTotalSeguro == undefined ? 0 : (dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}
+            <p>$ {{ dataService.getClickCuota.valorTotalSeguro == undefined ? 0 : (dataService.clickCuota.valorTotalSeguro | number:'1.0':'es') }}
             </p>
-            <p>$ {{ dataService.clickCuota.valorCuotaSinSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaSinSeguro | number:'1.0':'es')}}
+            <p>$ {{ dataService.getClickCuota.valorCuotaSinSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaSinSeguro | number:'1.0':'es')}}
             </p>
-            <p>$ {{ dataService.clickCuota.valorCuotaConSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es')}}
+            <p>$ {{ dataService.getClickCuota.valorCuotaConSeguro == undefined ? 0 : (dataService.clickCuota.valorCuotaConSeguro | number:'1.0':'es')}}
             </p>
-            <p>$ {{ dataService.clickCuota.costoMensualSeguro == undefined ? 0 : (dataService.clickCuota.costoMensualSeguro | number:'1.0':'es')}}
+            <p>$ {{ dataService.getClickCuota.costoMensualSeguro == undefined ? 0 : (dataService.clickCuota.costoMensualSeguro | number:'1.0':'es')}}
             </p>            
         </div>
     </div>

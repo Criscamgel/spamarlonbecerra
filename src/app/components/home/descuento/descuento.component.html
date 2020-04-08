@@ -9,12 +9,12 @@
             currencyMask
             placeholder="Porcentaje de descuento"
             [formControl]="descuento"
-            [options]="{ align: 'left', prefix: '% ', thousands: '.', decimal: ',', precision: 0 }"
+            [options]="{ align: 'left', prefix: '', suffix: '%', thousands: '.', decimal: ',', precision: 0 }"
             name="descuento"
             [min]="descuentoMinimo"                                    
             [max]="descuentoMaximo"                              
             required>                               
-            <mat-error *ngIf="descuento.errors?.min">El valor mínimo a financiar es de {{descuentoMinimo}} %</mat-error>       
-            <mat-error *ngIf="descuento.errors?.max">El valor máximo a financiar es de {{descuentoMaximo}} %</mat-error>       
+            <mat-error *ngIf="descuento.errors?.min">El valor mínimo de descuento debe ser de {{descuentoMinimo}} %</mat-error>       
+            <mat-error *ngIf="descuento.errors?.max">El valor máximo de descuento debe ser de {{descuentoMaximo}} %</mat-error>       
         </mat-form-field>
     </div>

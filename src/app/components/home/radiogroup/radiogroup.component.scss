@@ -76,7 +76,7 @@ span.radio {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     .disableOption {
-        background-color: $blancoTransparente;
+        background-color: $blancoTransparenteMedio;
         height: 100%;
         grid-area: 1/1/1/1;
         z-index: 1;

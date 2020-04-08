@@ -13,6 +13,7 @@ export class DataService {
 
   public dataCuotas: RespuestaCalculadora[] = [];
   public clickCuota: RespuestaCalculadora;
+  public cuotaNumero: number;
   public monto: number;
   public descuento: number;
   public pagoSeleccionado: number;

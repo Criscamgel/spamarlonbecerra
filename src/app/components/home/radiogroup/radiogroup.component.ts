@@ -27,6 +27,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class RadiogroupComponent implements OnInit {
   public radios: Cuota[];
   public data: RespuestaCalculadora[] = [];
+  public cuotaSeleccionada: any;
 
   constructor(public cuotasService: CuotasService,
               public dataService: DataService) {
@@ -34,25 +35,25 @@ export class RadiogroupComponent implements OnInit {
   }
 
   ngOnInit() {
-    registerLocaleData( es );
+    registerLocaleData(es);
     this.initializer();
   }
 
   public initializer() {
     this.dataService.disabledRadios = true;
     this.cuotasService.getCuotas()
-    .subscribe(cuotasRadio => {
-      this.radios = cuotasRadio;
-      this.cuotasService.cuotasCargadas = true;
-  });
+      .subscribe(cuotasRadio => {
+        this.radios = cuotasRadio;
+        this.cuotasService.cuotasCargadas = true;
+      });
   }
 
   setCuota(valorNumerico: number) {
+    this.dataService.cuotaNumero = valorNumerico;
     this.dataService.setPagoSeleccionado(valorNumerico);
-    const cuota = this.dataService.getDataCuotas.filter(cuot => cuot.numeroCuota === valorNumerico);
-    if (cuota.length > 0) {
-      this.dataService.setClikCuota = cuota[0];
+    this.cuotaSeleccionada = this.dataService.getDataCuotas.filter(cuot => cuot.numeroCuota === valorNumerico);
+    if (this.cuotaSeleccionada.length > 0) {
+      this.dataService.setClikCuota = this.cuotaSeleccionada[0];
     }
   }
-
 }

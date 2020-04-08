@@ -20,5 +20,12 @@ h1{
     @include smallTablet(){
         font-size: 15px;
         text-align: center;
+        color: $textoUno;
+    }
+
+    @include tabletLaptop(){
+        font-size: 15px;
+        text-align: center;
+        color: $textoUno;
     }
 }

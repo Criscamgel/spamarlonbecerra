@@ -56,7 +56,6 @@ export class HomeComponent implements OnInit {
   getOservableMonto() {
     this.dataService.observableMonto
     .subscribe((value: number) => {
-    console.log(value, "value Home");
     if (value !== 0) {
     this.dataService.disabledRadios = false;
     this.request.valorSolicitado = value;
@@ -71,10 +70,8 @@ export class HomeComponent implements OnInit {
   getOservableDescuento() {
     this.dataService.observableDescuento
     .subscribe((value: number) => {
-      console.log(this.dataService.descuentoErroneo);
-      console.log(value);
-    if (value !== 0 && value !== null && !this.dataService.descuentoErroneo) {
-    this.request.descuento = value;
+      if (value !== 0 && value !== null && !this.dataService.descuentoErroneo) {
+    this.request.descuento = value / 100;
     this.dataService.cuotaCalculada = false;
     this.calcularCuota();
     } else {
@@ -87,7 +84,14 @@ export class HomeComponent implements OnInit {
     this.dataService.calculoCuotas(this.request).subscribe((data) => {
       this.dataService.setDataCuotas = data;
       this.dataService.cuotaCalculada = true;
-      console.log(data);
+      /**/console.log(data);
+      if (this.dataService.cuotaNumero !== undefined && this.dataService.cuotaNumero !== 0) {
+        data.forEach(item => {
+          if (item.numeroCuota === this.dataService.cuotaNumero) {
+            this.dataService.clickCuota = item;
+          }
+        });
+      }
     });
   }
 
