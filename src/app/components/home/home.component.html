@@ -38,8 +38,8 @@
 
             <app-calculadora></app-calculadora>
             <div class="botones">
-                <button class="primario" [disabled]="dataService.clickCuota[0] === undefined" (click)="onPrint()">Imprimir</button>
-                <button class="secundario" [disabled]="dataService.clickCuota[0] === undefined" (click)="goSolicitud()">Iniciar Solicitud</button>
+                <button class="primario" [disabled]="dataService.clickCuota.montoAFinanciar === 0" (click)="onPrint()">Imprimir</button>
+                <button class="secundario" [disabled]="dataService.clickCuota.montoAFinanciar === 0" (click)="goSolicitud()">Iniciar Solicitud</button>
                 <a class="viewMobile" [routerLink]="['/ayuda']"><button class="secundario">Ayuda Comercial</button></a>
             </div>
         </div>
