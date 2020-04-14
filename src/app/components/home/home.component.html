@@ -38,7 +38,7 @@
 
             <app-calculadora></app-calculadora>
             <div class="botones">
-                <button class="primario" (click)="onPrint()">Imprimir</button>
+                <button class="primario" [disabled]="dataService.clickCuota" (click)="onPrint()">Imprimir</button>
                 <button class="secundario" (click)="goSolicitud()">Iniciar Solicitud</button>
                 <a class="viewMobile" [routerLink]="['/ayuda']"><button class="secundario">Ayuda Comercial</button></a>
             </div>

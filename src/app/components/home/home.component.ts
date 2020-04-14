@@ -84,7 +84,6 @@ export class HomeComponent implements OnInit {
     this.dataService.calculoCuotas(this.request).subscribe((data) => {
       this.dataService.setDataCuotas = data;
       this.dataService.cuotaCalculada = true;
-      /**/console.log(data);
       if (this.dataService.cuotaNumero !== undefined && this.dataService.cuotaNumero !== 0) {
         data.forEach(item => {
           if (item.numeroCuota === this.dataService.cuotaNumero) {

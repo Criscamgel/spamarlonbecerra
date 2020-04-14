@@ -62,7 +62,7 @@
 
     input[type="radio"]:checked + div {
     /* style for the checked/selected state */
-    border: 1px solid $textoUno;
+    border: 3px solid $textoUno;
     background-color: $blanco;
     width: 100%;
     height: auto;
