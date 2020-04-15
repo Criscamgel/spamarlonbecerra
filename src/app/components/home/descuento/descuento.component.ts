@@ -39,11 +39,11 @@ export class DescuentoComponent implements OnInit {
           this.descuento.enable();
           switch (value) {
             case 6:
-              this.descuentoMinimo = 1;
+              this.descuentoMinimo = 0;
               this.descuentoMaximo = 8.9;
               break;
             case 12:
-              this.descuentoMinimo = 1;
+              this.descuentoMinimo = 0;
               this.descuentoMaximo = 4;
               break;
 

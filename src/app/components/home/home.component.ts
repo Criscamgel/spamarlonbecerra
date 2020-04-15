@@ -41,8 +41,14 @@ export class HomeComponent implements OnInit {
     this.getOservableMonto();
   }
 
-  convenioSet() {
-    this.dataService.convenio = this.convenio.value;
+  convenioSet(value) {
+    if (value) {
+    this.dataService.convenio = value;
+    } else {
+    this.dataService.setDescuento(0);
+    this.dataService.convenio = value;
+    this.calcularCuota();
+    }
   }
 
   goSolicitud() {
@@ -70,7 +76,7 @@ export class HomeComponent implements OnInit {
   getOservableDescuento() {
     this.dataService.observableDescuento
     .subscribe((value: number) => {
-      if (value !== 0 && value !== null && !this.dataService.descuentoErroneo) {
+      if (value !== undefined && value !== null && !this.dataService.descuentoErroneo) {
     this.request.descuento = value / 100;
     this.dataService.cuotaCalculada = false;
     this.calcularCuota();
@@ -87,7 +93,7 @@ export class HomeComponent implements OnInit {
       if (this.dataService.cuotaNumero !== undefined && this.dataService.cuotaNumero !== 0) {
         data.forEach(item => {
           if (item.numeroCuota === this.dataService.cuotaNumero) {
-            this.dataService.clickCuota = item;
+            this.dataService.setClikCuota = item;
           }
         });
       }

@@ -32,7 +32,7 @@
 
             <mat-checkbox
             [formControl]="convenio"
-            [checked]="convenioSet()"
+            (change)="convenioSet($event.checked)"
             >Paciente con convenio
             </mat-checkbox> 
 
