@@ -25,7 +25,7 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
     background-repeat: no-repeat;
     background-size: contain;
     @include Asmall(){
-      background-image: url($fondoMobile);
+      background-image: none;
     }
   }
 
