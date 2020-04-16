@@ -1,0 +1,12 @@
+@import "../../../../scss/variables";
+
+.load-container{
+    display: grid;    
+    background-color: $blancoTransparente;    
+    height: 100%;
+    mat-spinner{
+        align-self: center;
+        justify-self: center;
+    }
+}
+

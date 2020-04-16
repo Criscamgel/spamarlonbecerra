@@ -1,0 +1,30 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins";
+
+.fndHeader{
+    min-height: 70vh;
+    @include Asmall() {
+      min-height: 50vh;
+    }
+  }
+
+/* Formas Fuentes */
+.pLight{
+    font-weight: 300;
+    letter-spacing: 0.03px;
+    font-size: 16px;
+    color: $opaco;
+    @include Asmall() {
+      font-size: 13px;
+      text-align: center;
+    }
+  }  
+
+  .superHeader{
+    background-color: $negro;
+    margin-bottom: 8px;  
+    .contSuperHeader{
+      padding: 10px 0px;
+    }
+  }
+  

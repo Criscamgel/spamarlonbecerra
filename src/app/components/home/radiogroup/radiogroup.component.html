@@ -1,0 +1,15 @@
+<div class="contLoader">
+<app-loader *ngIf="!dataService.cuotaCalculada" [@animationFadeOut]="!dataService.cuotaCalculada"></app-loader>
+<div class="contRadioGroup">
+    <span [ngClass]="radio.nombre" class="radio" *ngFor="let radio of radios; let i = index" (click)="setCuota(radio.valorNumerico)">
+        <div class="disableOption" *ngIf="dataService.disabledRadios" [@animationFadeOut]="dataService.disabledRadios"></div>
+        <div *ngIf="!dataService.convenio || radio.valorNumerico === 6 || radio.valorNumerico === 12" class="cntPago">
+            <input [id]="radio.idCuota" name="cuota" type="radio" [value]="radio.valorNumerico">
+            <div class="pago">
+                <div class="periodo" [ngClass]="{paddingDiezTop: dataService.getDataCuotas.length !== 0}">{{radio.valorTexto}}</div>
+                <div *ngIf="dataService.getDataCuotas.length !== 0" class="cuota">$ {{dataService.getDataCuotas | cuota:radio.valorNumerico | number:'1.0':'es'}} /mes</div>
+            </div>            
+        </div>
+    </span>
+</div>
+</div>

@@ -1,11 +1,13 @@
+<app-loader id="loaderPrincipal" *ngIf="!cuotaService.cuotasCargadas" [@animationFadeOut]="!cuotaService.cuotasCargadas"></app-loader>
 <app-print></app-print>
-
 <div class="superContenedor fondo fndHeader">
     <!-- Contenedor -->
 
-    <section class="contenedor">
-        <div class="contenido">
-            <p class="pLight">Financia tus muebles con el Banco Santander</p>
+    <section class="seccionFluida superHeader">
+        <div class="contenedor">
+            <div class="contenido contSuperHeader">
+                <p class="pLight">Financia el tratamiento de tu paciente con Santander Consumer</p>
+            </div>
         </div>
     </section>
 
@@ -26,23 +28,21 @@
 
 <div class="superContenedor">
     <section class="contenedor marginGridMobile">
-        <div class="contenido">            
+        <div class="contenido">
+
+            <mat-checkbox
+            [formControl]="convenio"
+            (change)="convenioSet($event.checked)"
+            >Paciente con convenio
+            </mat-checkbox> 
+
             <app-calculadora></app-calculadora>
             <div class="botones">
-                <button class="primario" (click)="onPrint()">Imprimir</button>
-                <button class="secundario" (click)="goSolicitud()">Iniciar Solicitud</button>
+                <button class="primario" [disabled]="dataService.clickCuota.montoAFinanciar === 0" (click)="onPrint()">Imprimir</button>
+                <button class="secundario" [disabled]="dataService.clickCuota.montoAFinanciar === 0" (click)="goSolicitud()">Iniciar Solicitud</button>
+                <a class="viewMobile" [routerLink]="['/ayuda']"><button class="secundario">Ayuda Comercial</button></a>
             </div>
         </div>
     </section>
 </div>
-
-<footer class="seccionFluida footer">
-    <div class="contenedor">
-        <div class="contenido noViewMobile">
-                © 2020 Dream Rest S.A.S - Muebles & Accesorios S.A.<br>All Rights Reserved Kilometro 2 Vía Briceño - Sopo (Vereda Pueblo Viejo) Cundinamarca<br> PBX: 667-1267 | NIT: 860528329-5 | servicioalcliente@mueblesyaccesorios.com.co
-        </div>
-        <div class="contenido viewMobile">
-            © 2020 Dream Rest S.A.S - Muebles & Accesorios S.A.
-        </div>
-    </div>
-</footer>
+<app-footer></app-footer>

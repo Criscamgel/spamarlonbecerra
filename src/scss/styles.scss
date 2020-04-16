@@ -1,7 +1,15 @@
-@import "variables";
+@import "../scss/variables";
 @import "mixins";
 @import "fonts";
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-grey);
+$my-app-accent: mat-palette($mat-grey, 600, A100, A400);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+@include angular-material-theme($my-app-theme);
 
 * {
     box-sizing: border-box;
@@ -11,23 +19,36 @@
     transition: all 0.5s;
   }
 
+  body{
+    background-image: url($fondoUno);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include Asmall(){
+      background-image: none;
+    }
+  }
+
  /* Media Querys */
 
  .contenedor{
     width: 100%;
     display: grid;
-    grid-template-columns: 15% auto 15%;
+    grid-template-columns: 9% auto 38%;
     grid-auto-rows: auto;
-    margin: 0 auto;    
+    margin: 0 auto;
   
  @include Asmall() {
+  grid-template-columns: 15% auto 15%;
   }
   
   @include smallTablet() {
+    grid-template-columns: 15% auto 15%;
     max-width: $mWtablet;
   }
   
   @include tabletLaptop() {
+    grid-template-columns: 15% auto 15%;
     max-width: $mWlaptop;
   }
   
@@ -69,9 +90,8 @@
 
 footer .contenido{
     align-self: center;
-    justify-self: center;
+    justify-self: left;
     grid-column: 2;
-    text-align: center;
     color: $opaco;
     font-weight: 100;
     font-size: 12px;
@@ -88,6 +108,8 @@ button{
     height: 10vh;
   } 
 }
+
+
 .primario{
   border: 1px solid $negro;
 }
@@ -95,6 +117,7 @@ button{
   border: 1px solid $negro;
   background-color: $negro;
   color: $blanco;
+  width: 100%;
 }
 
 .botones{
@@ -102,7 +125,6 @@ button{
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
   grid-gap: 15px;
-  margin: 10px 0px;
   @include Asmall(){
     grid-template-columns: 1fr;
   }  
@@ -205,4 +227,73 @@ h1.titleMobile {
 .fadeIn {
   animation-name: fadeIn;
 }
+
+/* Paddings */
+.paddingDiezTop{
+  padding-top: 10px;
+}
+.paddingDiezBottom{
+  padding-bottom: 10px;
+}
+
+/* Margin */
+.marginDiezTop{
+  margin-top: 10px;
+}
+.marginDiezBottom{
+  margin-bottom: 10px;
+}
+
+.textoBlanco{
+  color: white !important;
+}
+
+a, a:link, a:visited, a:hover, a:active{
+  color: $negro;
+}
+
+mat-checkbox{
+  color: $blanco;
+  margin: 20px 0px;
+  @include Asmall{
+    margin: 0;
+    color: black;
+    text-align: center;    
+  }
+}
+
+.mat-checkbox-frame {
+  border: 1px solid $blanco;
+  @include Asmall{
+    border: 1px solid black;   
+  }
+}
+
+/* Cont Loader */
+.contLoader{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "overlay";
+  app-loader{
+    grid-row: 1;
+    grid-row: 1;
+    grid-area: overlay;
+    z-index: 2;
+  }
+}
+
+.contLoader > div{
+  grid-area: overlay;
+}
+
+#loaderPrincipal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
 

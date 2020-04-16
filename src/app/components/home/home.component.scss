@@ -1,25 +1,14 @@
 @import "../../../scss/variables.scss";
 @import "../../../scss/mixins";
 
-.fndHeader{
-    background-image:url($fondoUno);
-    min-height: 100vh;
-    background-position: bottom center;
-    @include Asmall() {
-      background-image:url($fondoMobile);
-      min-height: 50vh;
-    }
-  }
-
 /* Formas Fuentes */
 .pLight{
     font-weight: 300;
     letter-spacing: 0.03px;
     font-size: 16px;
-    color: $blanco;
+    color: $opaco;
     @include Asmall() {
       font-size: 13px;
-      color: $negro;
       text-align: center;
     }
   }
@@ -28,12 +17,24 @@
     display: none;
 }
 
+.superHeader{
+  background-color: $negro;
+  margin-bottom: 8px;  
+  .contSuperHeader{
+    padding: 10px 0px;
+  }
+}
+
 @media print {
-    .superContenedor, footer{
+    .superContenedor, app-footer{
         display: none;
     }
     app-print {
         display: block;
     }
+}
+
+button:disabled{
+  opacity: 0.5;
 }
   

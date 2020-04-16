@@ -1,0 +1,24 @@
+<div class="contInputHeader marginGridMobile">
+    <h1 class="noViewMobile">Financia el tratamiento de tu paciente fácilmente</h1>
+
+    
+    <div class="contMatInput">
+        <mat-form-field appearance="outline">
+            <mat-label>¿Cuanto cuesta el tratamiento a financiar?</mat-label>
+            <input 
+            matInput
+            type="tel" 
+            currencyMask
+            placeholder="¿Cuanto cuesta el tratamiento a financiar?"
+            [formControl]="monto"
+            [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
+            name="monto"
+            [min]="montoMinimo"                                    
+            [max]="montoMaximo"                                    
+            required>                               
+            <mat-error *ngIf="monto.errors?.min">El valor mínimo a financiar es de $ {{montoMinimo | number:'1.0':'es'}}</mat-error>       
+            <mat-error *ngIf="monto.errors?.max">El valor máximo a financiar es de $ {{montoMaximo | number:'1.0':'es'}}</mat-error>       
+        </mat-form-field>
+    </div>
+
+</div>
